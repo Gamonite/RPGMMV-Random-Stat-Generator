@@ -1,6 +1,9 @@
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
+#include <string>
+#include "proto.h"
+#include "globvari.h"
 
 using namespace std;
 
@@ -8,27 +11,23 @@ int main()
 {
 	srand(time(0));
 
-	int attack = rand() % (100 + 1);
-	int defense = rand() % (100 + 1);
-	int mattack = rand() % (100 + 1);
-	int mdefense = rand() % (100 + 1);
-	int agility = rand() % (100 + 1);
-	int luck = rand() % (50 + 1);
-	int mhp = rand() % (100 + 1);
-	int mmp = rand() % (100 + 1);
+	cout << "*****************************************************" << endl;
+	cout << "*                                                   *" << endl;
+	cout << "*    Welcome to RPG Maker Random Stat Generator!    *" << endl;
+	cout << "*                                                   *" << endl;
+	cout << "*****************************************************" << endl;
+	cout << "\n\n" << endl;
+
+	int ti;
 
 
-	cout << "Attack is " << attack << endl;
+	type();
+	ti = tier();
+	magic();
 
-	cout << "Defense is " << defense << endl;
-
-	cout << "M-Attack is " << mattack << endl;
-
-	cout << "M-Defense is " << mdefense << endl;
-
-	cout << "Agility is " << agility << endl;
-
-	cout << "Luck is " << luck << endl;
+	cout << "\nYou picked a: " << mmagic << " Tier-" << ti << " " << mtype << " " << /*type() <<*/ endl;
 
 	return 0;
+
 }
+
