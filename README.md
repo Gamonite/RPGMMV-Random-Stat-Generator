@@ -7,4 +7,6 @@ Work in Progress - Functional
 
 Use codeblocks or any other c++ compiler to use program.
 
+Incasenot compiler is available The .exe file is avialable nad up to date.
+
 This can be altered for use with other RPG maker software
