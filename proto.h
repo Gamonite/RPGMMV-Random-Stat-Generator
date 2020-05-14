@@ -17,8 +17,14 @@ int randnum5();
 
 void type();
 
-int tier();
+void tier();
 
-int magic();
+void magic();
 
-void wtype();
+void stat();
+
+void pstat();
+
+void wstat();
+
+void astat();
