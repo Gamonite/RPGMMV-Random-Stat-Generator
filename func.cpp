@@ -3,31 +3,42 @@
 #include <ctime>
 #include <string>
 #include "proto.h"
-#include "globvari.h"
+#include "glovari.h"
 
 using namespace std;
 
 string mtype;
 string mmagic;
+int itype;
+int imagic;
+int mtier;
+int mult;
+int attack;
+int defense;
+int mattack;
+int mdefense;
+int agility;
+int luck;
+int mhp;
+int mmp;
 
 void type()
 {
 	int opt;
-	int type;
 
 	do
 	{
-		cout << "What would you like to generate?\n" << endl;
+		cout << "Which would you like to generate?\n" << endl;
 		cout << "1 - Weapon Stats" << endl;
 		cout << "2 - Armor Stats\n" << endl;
 		cout << "Pick A Number: ";
-		cin >> type;
-		if (type == 1)
+		cin >> itype;
+		if (itype == 1)
 		{
 			mtype = "Weapon";
 			opt = 1;
 		}
-		else if (type == 2)
+		else if (itype == 2)
 		{
 			mtype = "Armor";
 			opt = 1;
@@ -40,9 +51,8 @@ void type()
 
 };
 
-int tier()
+void tier()
 {
-	int tier;
 	int opt;
 
 	do
@@ -54,8 +64,8 @@ int tier()
 		cout << "4 - 301-400" << endl;
 		cout << "5 - 401-500\n" << endl;
 		cout << "Pick A Number: ";
-		cin >> tier;
-		if (tier >= 1 && tier <= 5)
+		cin >> mtier;
+		if (mtier >= 1 && mtier <= 5)
 		{
 			opt = 1;
 		}
@@ -64,13 +74,10 @@ int tier()
 			cout << "Pick a valid option please!\n\n" << endl;
 		}
 	} while (opt == 0);
-
-	return tier;
 };
 
-int magic()
+void magic()
 {
-	int magic;
 	int opt;
 
 	do
@@ -79,14 +86,14 @@ int magic()
 		cout << "1 - Yes" << endl;
 		cout << "2 - No\n" << endl;
 		cout << "Pick A Number: ";
-		cin >> magic;
+		cin >> imagic;
 
-		if (magic == 1)
+		if (imagic == 1)
 		{
 			mmagic = "Enchanted";
 			opt = 1;
 		}
-		else if (magic == 2)
+		else if (imagic == 2)
 		{
 			mmagic = "Non-magical";
 			opt = 1;
@@ -99,18 +106,101 @@ int magic()
 
 };
 
-void wtype(int& x)
+void stat()
 {
-	string wtype;
-
-	if (x == 1)
+	switch (mtier)
 	{
-		wtype = "weapon";
-	}
-	else
-	{
-		wtype = "armor";
+	case 1:
+		mult = 1;
+		break;
+	case 2:
+		mult = 100;
+		break;
+	case 3:
+		mult = 200;
+		break;
+	case 4:
+		mult = 300;
+		break;
+	case 5:
+		mult = 400;
+		break;
 	}
 
-	cout << wtype;
-}
+	attack = rand() % 100 + mult;
+	defense = rand() % 100 + mult;
+	mattack = rand() % 100 + mult;
+	mdefense = rand() % 100 + mult;
+	agility = rand() % 100 + mult;
+	luck = rand() % 100 + mult;
+	mhp = rand() % 100 + mult;
+	mmp = rand() % 100 + mult;
+};
+
+void pstat()
+{
+    if (itype == 1)
+    {
+        wstat();
+    }
+    else
+    {
+        astat();
+    }
+};
+
+void wstat()
+{
+    if(imagic == 2)
+    {
+        cout << "Attack stat is ----> " << attack << endl;
+        //cout << "Defense stat is ---> " << defense << endl;
+        //cout << "M-Attack stat is --> " << mattack << endl;
+        //cout << "M-Defense stat is -> " << mdefense << endl;
+        cout << "Agility stat is ---> " << agility/2 << endl;
+        cout << "Luck stat is ------> " << luck/3 << endl;
+        cout << "Max HP stat is ----> " << mhp << endl;
+        cout << "Max MP stat is ----> " << mmp << endl;
+        cout << "\n\n" << endl;
+    }
+    else
+    {
+        cout << "Attack stat is ----> " << attack << endl;
+        //cout << "Defense stat is ---> " << defense << endl;
+        cout << "M-Attack stat is --> " << mattack << endl;
+        //cout << "M-Defense stat is -> " << mdefense << endl;
+        cout << "Agility stat is ---> " << agility/2 << endl;
+        cout << "Luck stat is ------> " << luck/3 << endl;
+        cout << "Max HP stat is ----> " << mhp << endl;
+        cout << "Max MP stat is ----> " << mmp << endl;
+        cout << "\n\n" << endl;
+    }
+};
+
+void astat()
+{
+    if(imagic == 2)
+    {
+        //cout << "Attack stat is ----> " << attack << endl;
+        cout << "Defense stat is ---> " << defense << endl;
+        //cout << "M-Attack stat is --> " << mattack << endl;
+        //cout << "M-Defense stat is -> " << mdefense << endl;
+        cout << "Agility stat is ---> " << agility/2 << endl;
+        cout << "Luck stat is ------> " << luck/3 << endl;
+        cout << "Max HP stat is ----> " << mhp << endl;
+        cout << "Max MP stat is ----> " << mmp << endl;
+        cout << "\n\n" << endl;
+    }
+    else
+    {
+        //cout << "Attack stat is ----> " << attack << endl;
+        cout << "Defense stat is ---> " << defense << endl;
+        //cout << "M-Attack stat is --> " << mattack << endl;
+        cout << "M-Defense stat is -> " << mdefense << endl;
+        cout << "Agility stat is ---> " << agility/2 << endl;
+        cout << "Luck stat is ------> " << luck/3 << endl;
+        cout << "Max HP stat is ----> " << mhp << endl;
+        cout << "Max MP stat is ----> " << mmp << endl;
+        cout << "\n\n" << endl;
+    }
+};
