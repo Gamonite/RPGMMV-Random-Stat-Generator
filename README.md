@@ -1,7 +1,7 @@
 # RPGMMV-Random-Stat-Generator
 Used for Stat generation for items, weapons and armor for RPG Maker MV
 
-Work in Progress
+Work in Progress - Functional
 
 ** THIS IS NOT A PLUGIN **
 
