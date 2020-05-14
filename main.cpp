@@ -3,31 +3,44 @@
 #include <ctime>
 #include <string>
 #include "proto.h"
-#include "globvari.h"
+#include "glovari.h"
 
 using namespace std;
 
 int main()
 {
-	srand(time(0));
+    srand(time(0));
 
-	cout << "*****************************************************" << endl;
-	cout << "*                                                   *" << endl;
-	cout << "*    Welcome to RPG Maker Random Stat Generator!    *" << endl;
-	cout << "*                                                   *" << endl;
-	cout << "*****************************************************" << endl;
-	cout << "\n\n" << endl;
+    int ans = 1;
 
-	int ti;
+    cout << "*****************************************************" << endl;
+    cout << "*                                                   *" << endl;
+    cout << "*    Welcome to RPG Maker Random Stat Generator!    *" << endl;
+    cout << "*                                                   *" << endl;
+    cout << "*****************************************************" << endl;
+    cout << "\n\n" << endl;
 
+    do
+    {
 
-	type();
-	ti = tier();
-	magic();
+    type();
+    tier();
+    magic();
+    stat();
 
-	cout << "\nYou picked a: " << mmagic << " Tier-" << ti << " " << mtype << " " << /*type() <<*/ endl;
+    cout << "\nYou picked a: " << mmagic << " Tier-" << mtier << " " << mtype << "!" << endl;
+    cout << "\n" << endl;
 
-	return 0;
+    pstat();
 
+    cout << "Would you like ot generate another?\n" << endl;
+    cout << "1 - Yes" << endl;
+    cout << "2 - No" << endl;
+    cout << "Choice: " << endl;
+    cin >> ans;
+    cout << "\n\n" << endl;
+
+    }while(ans != 2);
+
+    return 0;
 }
-
